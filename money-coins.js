@@ -13,7 +13,7 @@ function moneyCoins (num) {
         newnum = num-arr[i];
         result.push(arr[i]);
         break;
-      }
+      } 
     }
     return result.concat(moneyCoins(newnum));
   }
