@@ -1,5 +1,18 @@
+//Money Coint - Challenge
+
 function moneyCoins (num) {
-  // your implementation code here
+	var counter = [10000,5000,2000,1000,500,200,100,50,20,10,1];
+	var pecahan = [];
+	
+	for(var i=0; i<counter.length; i++){
+		while(num - counter[i] >= 0){
+			num = num - counter[i];
+			pecahan.push(counter[i]);
+		}
+	}
+	
+	return pecahan;
+  
 }
 
 // Drive code
