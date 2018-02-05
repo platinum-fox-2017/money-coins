@@ -1,5 +1,25 @@
+// Coin dengan pecahan: 1,10,20,50,100,200,500,1000,2000,5000,10000
 function moneyCoins (num) {
   // your implementation code here
+  var arrayCoin = [1,10,20,50,100,200,500,1000,2000,5000,10000];
+  var pointer = arrayCoin.length-1;
+  var result = [];
+  while(num>=0){
+    if(num==0)
+      return result;
+    //console.log(num);
+    var tempNumber = Math.floor(num/arrayCoin[pointer]);
+    if(tempNumber>0){
+      for(var i=0;i<tempNumber;i++)
+        result.push(arrayCoin[pointer]);
+      num = num%arrayCoin[pointer];
+      pointer --;
+    }
+    else {
+      pointer --;
+    }
+  }
+  return result;
 }
 
 // Drive code
