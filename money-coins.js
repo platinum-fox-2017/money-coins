@@ -1,5 +1,16 @@
 function moneyCoins (num) {
-  // your implementation code here
+  var duit = [10000,5000,2000,1000,500,200,50,20,10,1]
+  var simpan=[]
+  while(num>0){
+    for(let i=0;i<duit.length;i++){
+      if(num>=duit[i]){
+        simpan.push(duit[i])
+        num-=duit[i]
+        break;
+      }
+    }
+  }
+  return simpan
 }
 
 // Drive code
