@@ -1,5 +1,34 @@
+/*
+input: numbers
+process: LOOP and IF
+output: array of numbers
+
+*/
+
+
 function moneyCoins (num) {
   // your implementation code here
+
+  var hasilCoin = [];
+  var pecahanCoin = [1, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
+
+  while (num != 0) {
+    var coinMax = pecahanCoin[0]; 
+    var indexMax = 0;
+    for (var i = 0; i < pecahanCoin.length; i++) { // to find index max per while
+      if (pecahanCoin[i] <= num && pecahanCoin[i] > coinMax) {
+        coinMax = pecahanCoin[0];
+        indexMax++;
+      }
+    }
+
+    hasilCoin.push(pecahanCoin[indexMax]);
+    num -= pecahanCoin[indexMax];
+
+  }
+
+  return hasilCoin;
+
 }
 
 // Drive code
