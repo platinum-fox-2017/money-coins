@@ -1,5 +1,17 @@
 function moneyCoins (num) {
-  // your implementation code here
+  var result = [];
+  var listCoins = [1, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000];
+
+  while(num != 0) {
+    for (var i = listCoins.length - 1; i >= 0; i--) {
+    	while(listCoins[i] <= num) {
+        result.push(listCoins[i]);
+        num -= listCoins[i];
+      }
+    }
+  }
+
+  return result;
 }
 
 // Drive code
