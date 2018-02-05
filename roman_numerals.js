@@ -1,12 +1,24 @@
-function to_roman (num) {
+function convertToCoin (num) {
   // your implementation code here
+  var coins = [];
+  var coinChanger = [10000,5000,2000,1000,500,200,100,50,20,10,1];  
+  for(var i = 0; i < coinChanger.length; i++){
+      while(num >= coinChanger[i]){
+          coins.push(coinChanger[i]);    
+          num -= coinChanger[i];
+      }
+    if(num <= 0){
+        break;
+    }
+  }
+
+  return coins;
 }
 
 // Drive code
 console.log('Testing\n')
 console.log('input | expected | actual')
 console.log('——————|——————————|————————')
-console.log('[1,5]       | 15         | ', sum_array([1,5])
-console.log('[1,100]     | 5050       | ', sum_array([1,100])
-console.log('[5,1]       | 15         | ', sum_array([5,1])
-console.log('[100,1]     | 5050       | ', sum_array([100,1])
+console.log( convertToCoin(543))
+console.log( convertToCoin(7752))
+console.log( convertToCoin(37454))
